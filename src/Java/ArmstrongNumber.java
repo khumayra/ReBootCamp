@@ -6,6 +6,7 @@ package Java;
 public class ArmstrongNumber {
     public static void main(String[] args) {
         System.out.println(isArmstrong(21));
+        System.out.println(isArmstrong2(153));
     }
     public static boolean isArmstrong(int num) {
         //153 > 1^3+5^3+3^3
@@ -16,8 +17,19 @@ public class ArmstrongNumber {
             int digit = Integer.parseInt("" + number.charAt(i));
             sum += Math.pow(digit, power);
         }
-        if (sum != num) return false;
+        return sum==num;
+    }
+    public static boolean isArmstrong2(int num){
+        int digits = num;
+        int sum =0;
+        int power = String.valueOf(num).length();
 
-        return true;
+        while(digits!=0){
+            int each = digits%10;
+            digits/=10;
+            sum+=Math.pow(each, power);
+
+        }
+        return sum==num;
     }
 }
