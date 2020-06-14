@@ -1,6 +1,6 @@
 package Java;
 
-public class SimpleRevering {
+public class SimpleReversing {
     public static void main(String[] args) {
         String word ="Hello";
         System.out.println(reverseStr(word));
